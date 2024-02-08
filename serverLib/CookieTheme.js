@@ -4,7 +4,7 @@ import { setCookie, getCookie, getCookies, deleteCookie, hasCookie } from 'cooki
 export async function getCookieTheme() {
 
     const theme = getCookie('theme', { cookies })
-    console.log('get theme cookie ', theme)
+
     if (!theme)
         return 'unset'
     if (theme === 'dark')

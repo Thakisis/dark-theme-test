@@ -14,7 +14,6 @@ export function Nav(props) {
             <div className={styles.navThemes}>
                 <ThemeNav></ThemeNav>
                 <ThemeSelector></ThemeSelector>
-
             </div>
         </div>
     )
