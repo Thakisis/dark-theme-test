@@ -7,7 +7,6 @@ export function ThemeNav({ theme }) {
 
     const [isPending, startTransition] = useTransition()
     const changeTheme = (newTheme) => {
-        console.log("client", newTheme)
         startTransition(() => setTheme(newTheme))
     }
 
