@@ -1,16 +1,16 @@
 'use server'
 import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
-import { setCookie, deleteCookie, hasCookie, getCookie, getCookies } from 'cookies-next'
+import { setCookie, deleteCookie } from 'cookies-next'
 
-export async function setTheme(newTheme) {
+export async function setTheme(theme) {
 
-    if (newTheme === "unset")
-        return deleteCookie('theme', { cookies })
-    setCookie('theme', newTheme, { cookies })
-
-
+    setCookieTheme(theme)
     revalidatePath('/', 'layout')
-
-
+}
+function setCookieTheme(theme) {
+    if (newTheme === "unset") {
+        return deleteCookie('theme', { cookies })
+    }
+    setCookie('theme', newTheme, { cookies })
 }
