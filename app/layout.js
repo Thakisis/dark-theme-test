@@ -13,11 +13,14 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const cookie = await getCookieTheme()
+
   return (
     <html lang="en">
-      <body className={inter.className}>
+
+      <body className={`${inter.className} ${cookie}Theme`} >
+
         <Nav cookieTheme={cookie}></Nav>
         {children}</body>
-    </html>
+    </html >
   )
 }
