@@ -9,8 +9,8 @@ export async function setTheme(theme) {
     revalidatePath('/', 'layout')
 }
 function setCookieTheme(theme) {
-    if (newTheme === "unset") {
+    if (theme === "unset") {
         return deleteCookie('theme', { cookies })
     }
-    setCookie('theme', newTheme, { cookies })
+    setCookie('theme', theme, { cookies })
 }
